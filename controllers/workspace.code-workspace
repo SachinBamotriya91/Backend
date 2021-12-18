@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "../../Angular/AngularCRUD"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../express"
+		},
+		{
+			"path": "../../expressAssignment"
+		},
+		{
+			"path": "../../NodeJS"
+		},
+		{
+			"path": "../../NodeWithSequelize"
+		},
+		{
+			"path": "../../SeqExpress"
+		},
+		{
+			"path": "../../SeqExpressAssignment"
+		},
+		{
+			"path": "../../Sequelize"
+		},
+		{
+			"path": "../../SequelizeAssignment"
+		}
+	]
+}

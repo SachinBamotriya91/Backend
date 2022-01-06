@@ -1,8 +1,6 @@
 const db = require("../models");
 const Products = db.products;
-const Op = db.Sequelize.Op;
-const sequelize=db.sequelize;
-const Sequelize=db.Sequelize;
+
 var express = require("express");
 const app = express();
 var cors = require('cors');
@@ -11,7 +9,7 @@ app.use(cors());
 var nodemailer = require('nodemailer');
 var mail = require('../service/mail.service');
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -23,8 +21,6 @@ app.use(function (req, res, next) {
 
 //find all products
 exports.findAll = (req, res) => {
-    console.log("heell")
-
     Products.findAll({ raw: true })
         .then(data => {
             console.log(data);
@@ -32,13 +28,10 @@ exports.findAll = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message:
-                    err.message || "Error Getting Users" + err
+                message: err.message || "Error Getting Users" + err
             });
         });
 };
-
-
 exports.create = (req, res) => {
 
     const product = {
@@ -50,19 +43,14 @@ exports.create = (req, res) => {
         image: req.body.image,
         rating: req.body.rating
     };
-
     Products.create(product)
         .then(data => {
             res.send("Products Added Successfully.");
         })
         .catch(err => {
             res.status(500).send({
-                message:
-                    err.message || "Error Adding new Product."
+                message: err.message || "Error Adding new Product."
             });
         });
 
 };
-
-
-

@@ -32,15 +32,11 @@ var updateEmailMsg = (receiver, receiverName) => {
 
 
 var forgetPasswordEmailMsg = (receiver, receiverName, receiverPassword) => {
-    console.log(typeof(receiver)+":"+receiverName+":"+receiverPassword)
+    console.log(typeof(receiver) + ":" + receiverName + ":" + receiverPassword)
     mailOptions.to = receiver;
     mailOptions.subject = 'Hi ' + receiverName + ' You are  Password Recoverd  Successfully'
     mailOptions.text = 'Your Password : ' + receiverPassword + '\nThankyou!\n our Best Team \n Apna Store '
     return mailOptions;
 
 }
-
-
-
-module.exports = { transporter, mailOptions, createEmailMsg, updateEmailMsg ,forgetPasswordEmailMsg}
-
+module.exports = { transporter, mailOptions, createEmailMsg, updateEmailMsg, forgetPasswordEmailMsg }
